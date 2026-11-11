@@ -1,0 +1,20 @@
+# Keep the build context to what the image needs.
+.git
+.githooks
+.github
+.claude
+.codex
+.angular
+docs
+e2e
+node_modules
+dist
+coverage
+playwright-report
+test-results
+*.md
+*.tsbuildinfo
+
+# Local environment files never enter an image.
+.env
+.env.*
