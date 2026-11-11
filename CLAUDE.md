@@ -40,8 +40,6 @@ pnpm test
 pnpm build                 # prerenders every route
 ```
 
-
-
 ## Tooling: this repository ships its own `.claude/`
 
 Open `waypoint-website/` as the workspace root to activate it. The `wp-site-*` agents, the `/wp-*`
