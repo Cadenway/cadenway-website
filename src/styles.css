@@ -1,0 +1,13 @@
+/*
+ * Imports, the `@source` towards `@waypoint/ui` and document-level rules only.
+ *
+ * `source('.')` limits Tailwind's class detection to `src/`: without it the read-only mockup copy
+ * under `docs/maquette/` would put its own classes in the bundle.
+ *
+ * Until the design-system packages are published, Tailwind runs with its default theme. Once they
+ * are installed, add after the Tailwind import:
+ *   `@import '@waypoint/tokens/tokens.css';`
+ *   `@import '@waypoint/tokens/theme.css';`
+ *   `@source '../node_modules/@waypoint/ui';`
+ */
+@import 'tailwindcss' source('.');
