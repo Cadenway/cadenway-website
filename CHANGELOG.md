@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.1](https://github.com/Cadenway/cadenway-website/compare/v0.1.0...v0.1.1) (2026-11-12)
+
+
+### Bug Fixes
+
+* **deploy:** serve the site on the domain itself and redirect www ([#9](https://github.com/Cadenway/cadenway-website/issues/9)) ([a7fd304](https://github.com/Cadenway/cadenway-website/commit/a7fd3042c6c466e5ec8ee9a826d27129c016fd16))
+
 ## 0.1.0 (2026-11-12)
 
 
