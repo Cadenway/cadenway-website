@@ -4,6 +4,6 @@ import { expect, test } from '@playwright/test';
 test('the site starts', async ({ page }) => {
   await page.goto('/');
 
-  await expect(page).toHaveTitle('Waypoint');
-  await expect(page.locator('wp-root')).toBeAttached();
+  await expect(page).toHaveTitle('Cadenway');
+  await expect(page.locator('cw-root')).toBeAttached();
 });

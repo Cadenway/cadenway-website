@@ -1,6 +1,6 @@
-# waypoint-website
+# cadenway-website
 
-waypoint-website is the public site: the Vitrine artboard (marketing, pricing, FAQ) and the Legal pages (privacy, terms, help with a contact form). Angular 22 with static prerendering of every route, served as a Docker image of static files behind Traefik on `www.<domain>`. Created after the first version of the app.
+cadenway-website is the public site: the Vitrine artboard (marketing, pricing, FAQ) and the Legal pages (privacy, terms, help with a contact form). Angular 22 with static prerendering of every route, served as a Docker image of static files behind Traefik on `www.<domain>`. Created after the first version of the app.
 
 Open inconsistency to settle before shipping pricing: the free plan reads "10 membres, 5 Go" here and "5 membres, 2 Go" in the app.
 
@@ -8,12 +8,12 @@ Open inconsistency to settle before shipping pricing: the free plan reads "10 me
 
 Requirements: Node.js LTS and pnpm (versions in `package.json`), and Docker.
 
-1. Clone this repository next to the other Waypoint repositories, flat, in one folder.
-2. To run it with the rest of Waypoint, start the stack from `waypoint-ops`; it builds the sibling
+1. Clone this repository next to the other Cadenway repositories, flat, in one folder.
+2. To run it with the rest of Cadenway, start the stack from `cadenway-ops`; it builds the sibling
    folders, this one included (`core` profile; `full` adds every other service):
 
    ```bash
-   cd ../waypoint-ops/compose
+   cd ../cadenway-ops/compose
    docker compose -f compose.yaml -f compose.local.yaml --profile core up -d
    ```
 

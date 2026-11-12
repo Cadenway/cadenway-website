@@ -1,6 +1,6 @@
-# waypoint-website documentation
+# cadenway-website documentation
 
-Planned role: waypoint-website is the public site: the Vitrine artboard (marketing, pricing, FAQ) and the Legal pages (privacy, terms, help with a contact form). Angular 22 with static prerendering of every route, served as a Docker image of static files behind Traefik on `www.<domain>`. Created after the first version of the app.
+Planned role: cadenway-website is the public site: the Vitrine artboard (marketing, pricing, FAQ) and the Legal pages (privacy, terms, help with a contact form). Angular 22 with static prerendering of every route, served as a Docker image of static files behind Traefik on `www.<domain>`. Created after the first version of the app.
 
 ## Current status
 

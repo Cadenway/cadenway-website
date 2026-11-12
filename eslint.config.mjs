@@ -11,8 +11,8 @@ const signalFormsOnly = {
   message: 'Signal Forms only: use form() and [formField].',
 };
 const noSiblingSources = {
-  regex: '\\.\\./waypoint-',
-  message: 'Never import sibling sources: use the published @waypoint/* packages.',
+  regex: '\\.\\./cadenway-',
+  message: 'Never import sibling sources: use the published @cadenway/* packages.',
 };
 
 export default defineConfig(
@@ -42,11 +42,11 @@ export default defineConfig(
     rules: {
       '@angular-eslint/component-selector': [
         'error',
-        { type: 'element', prefix: 'wp', style: 'kebab-case' },
+        { type: 'element', prefix: 'cw', style: 'kebab-case' },
       ],
       '@angular-eslint/directive-selector': [
         'error',
-        { type: 'attribute', prefix: 'wp', style: 'camelCase' },
+        { type: 'attribute', prefix: 'cw', style: 'camelCase' },
       ],
       // Angular 22 style: `TaskRow`, not `TaskRowComponent`.
       '@angular-eslint/component-class-suffix': 'off',

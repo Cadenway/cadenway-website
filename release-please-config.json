@@ -3,7 +3,7 @@
   "packages": {
     ".": {
       "release-type": "node",
-      "package-name": "waypoint-website",
+      "package-name": "cadenway-website",
       "changelog-path": "CHANGELOG.md",
       "include-component-in-tag": false
     }

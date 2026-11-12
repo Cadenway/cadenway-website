@@ -1,7 +1,7 @@
 {
-  "name": "waypoint-website",
+  "name": "cadenway-website",
   "version": "0.0.0",
-  "description": "Waypoint public site: the Vitrine and the Legal pages, prerendered.",
+  "description": "Cadenway public site: the Vitrine and the Legal pages, prerendered.",
   "private": true,
   "license": "UNLICENSED",
   "packageManager": "pnpm@12.18.0",

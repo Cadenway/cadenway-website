@@ -1,4 +1,4 @@
-# waypoint-website: Claude Code instructions
+# cadenway-website: Claude Code instructions
 
 > **Source of truth.** This file is the entry point for Claude Code. The normative rules live in
 > [AGENTS.md](AGENTS.md), imported below: read it, do not paraphrase it from memory.
@@ -15,7 +15,7 @@
 2. Sections follow `Vitrine.dc.html` in order: hero with the animated app demo, logos, 7 features, key figures, integrations, migration (Trello, Jira, CSV), comparison, pricing, testimonials, FAQ, final call.
 3. The pricing calculator covers 1 to 5 000 members. Confirm the free-plan limits, plan prices and
    yearly discount before shipping pricing. See the [pricing notes](docs/integration.md#public-site-boundaries).
-4. Visuals from `@waypoint/ui` and `@waypoint/tokens`; French copy word for word from the mockup.
+4. Visuals from `@cadenway/ui` and `@cadenway/tokens`; French copy word for word from the mockup.
 5. Scroll reveals and the demo stop under `prefers-reduced-motion`.
 6. Only public API routes are called (newsletter, contact form).
 
@@ -29,7 +29,7 @@
 ## Target quality gate
 
 Use the [minimum checks by change](docs/development.md#minimum-checks-by-change) first.
-Run `/wp-quality` without arguments for the full local gate when applicable. Report unavailable
+Run `/cw-quality` without arguments for the full local gate when applicable. Report unavailable
 checks during bootstrap.
 
 ```bash
@@ -42,7 +42,7 @@ pnpm build                 # prerenders every route
 
 ## Tooling: this repository ships its own `.claude/`
 
-Open `waypoint-website/` as the workspace root to activate it. The `wp-site-*` agents, the `/wp-*`
+Open `cadenway-website/` as the workspace root to activate it. The `cw-site-*` agents, the `/cw-*`
 commands, the skills and the hooks are described in [.claude/README.md](.claude/README.md). Two things
 the session listing does not tell you:
 
@@ -55,5 +55,5 @@ the session listing does not tell you:
   registry publishing, and `format.mjs` formats supported files when its formatter is available.
   Apply the repository rules across tools. Resolve a refusal without bypassing the hook.
 
-The sibling repositories (`../waypoint-design-system`, `../waypoint-webapp`, `../waypoint-api-contracts`, `../waypoint-ops`) are read-only references
+The sibling repositories (`../cadenway-design-system`, `../cadenway-webapp`, `../cadenway-api-contracts`, `../cadenway-ops`) are read-only references
 from here; add them to the session (`--add-dir`) when a task needs to read them.
