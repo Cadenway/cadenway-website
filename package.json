@@ -9,16 +9,16 @@
     "node": "^24.15.0"
   },
   "scripts": {
-    "prepare": "node scripts/install-git-hooks.mjs",
+    "prepare": "git config core.hooksPath .githooks",
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build && node scripts/generate-sitemap.mjs",
+    "build": "ng build",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "lint": "eslint .",
     "typecheck": "ngc -p tsconfig.app.json --noEmit && ngc -p tsconfig.spec.json --noEmit && tsc -p e2e/tsconfig.json --noEmit",
-    "test": "node scripts/ng-test.mjs",
-    "e2e": "node scripts/playwright.mjs",
+    "test": "ng test --no-watch",
+    "e2e": "playwright test",
     "quality": "pnpm format:check && pnpm lint && pnpm typecheck && pnpm test && pnpm build"
   },
   "dependencies": {
