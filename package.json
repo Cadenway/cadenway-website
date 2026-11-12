@@ -1,6 +1,6 @@
 {
   "name": "cadenway-website",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Cadenway public site: the Vitrine and the Legal pages, prerendered.",
   "private": true,
   "license": "UNLICENSED",
