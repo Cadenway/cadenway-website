@@ -1,6 +1,6 @@
-# waypoint-website: Claude Code tooling
+# cadenway-website: Claude Code tooling
 
-This `.claude/` folder ships the Claude Code tooling of waypoint-website: **10 agents**,
+This `.claude/` folder ships the Claude Code tooling of cadenway-website: **10 agents**,
 11 slash commands, 7 rules, 10 skills, 3 hooks, the project
 settings and launch configuration. The application launch requires the planned package scripts.
 
@@ -27,11 +27,11 @@ Start from [AGENTS.md](../AGENTS.md) (the rules every assistant follows) and [CL
 Start from this checkout and attach the peers you need, for example:
 
 ```powershell
-claude --add-dir ../waypoint-design-system ../waypoint-webapp ../waypoint-api-contracts
+claude --add-dir ../cadenway-design-system ../cadenway-webapp ../cadenway-api-contracts
 ```
 
-Their `.claude/agents/` are discovered too, so their `wp-*` roles become available. Peer checkouts
-are **read-only** from a waypoint-website session (the guard refuses edits there): change them in their
+Their `.claude/agents/` are discovered too, so their `cw-*` roles become available. Peer checkouts
+are **read-only** from a cadenway-website session (the guard refuses edits there): change them in their
 own session and pull request.
 
 ## Agents
@@ -42,32 +42,32 @@ check that writes files. No agent delegates further.
 
 | Agent | Responsibility | Model | Effort | Mode |
 | --- | --- | --- | --- | --- |
-| `wp-site-page-builder` | Routes and pages, prerendered. | sonnet | high | Assigned writes |
-| `wp-site-section-builder` | Home sections from the Vitrine artboard. | sonnet | high | Assigned writes |
-| `wp-site-form-builder` | Newsletter and contact forms. | sonnet | high | Assigned writes |
-| `wp-site-test-writer` | Unit and e2e tests. | sonnet | high | Assigned writes |
-| `wp-site-seo-reviewer` | Metadata, prerendering, structure. | sonnet | high | Read-only |
-| `wp-site-a11y-auditor` | Accessibility of the public site. | sonnet | high | Read-only |
-| `wp-site-design-reviewer` | Fidelity to the Vitrine artboard. | sonnet | high | Read-only |
-| `wp-site-performance-reviewer` | Weight and loading of the public pages. | sonnet | high | Read-only |
-| `wp-site-copy-reviewer` | French copy against the mockup. | sonnet | medium | Read-only |
-| `wp-site-github-maintainer` | Workflows, templates and community files in .github/. | sonnet | medium | Assigned writes |
+| `cw-site-page-builder` | Routes and pages, prerendered. | sonnet | high | Assigned writes |
+| `cw-site-section-builder` | Home sections from the Vitrine artboard. | sonnet | high | Assigned writes |
+| `cw-site-form-builder` | Newsletter and contact forms. | sonnet | high | Assigned writes |
+| `cw-site-test-writer` | Unit and e2e tests. | sonnet | high | Assigned writes |
+| `cw-site-seo-reviewer` | Metadata, prerendering, structure. | sonnet | high | Read-only |
+| `cw-site-a11y-auditor` | Accessibility of the public site. | sonnet | high | Read-only |
+| `cw-site-design-reviewer` | Fidelity to the Vitrine artboard. | sonnet | high | Read-only |
+| `cw-site-performance-reviewer` | Weight and loading of the public pages. | sonnet | high | Read-only |
+| `cw-site-copy-reviewer` | French copy against the mockup. | sonnet | medium | Read-only |
+| `cw-site-github-maintainer` | Workflows, templates and community files in .github/. | sonnet | medium | Assigned writes |
 
 ## Commands
 
 | Command | What it does | Runs |
 | --- | --- | --- |
-| `/wp-page` | Add or change a page. | `wp-site-page-builder` |
-| `/wp-section` | Build a home section. | `wp-site-section-builder` |
-| `/wp-form` | Build the newsletter or contact form. | `wp-site-form-builder` |
-| `/wp-test` | Write tests. | `wp-site-test-writer` |
-| `/wp-seo-review` | Review SEO readiness. | `wp-site-seo-reviewer` |
-| `/wp-a11y` | Audit accessibility. | `wp-site-a11y-auditor` |
-| `/wp-design-review` | Compare with the mockup. | `wp-site-design-reviewer` |
-| `/wp-perf-review` | Review page weight. | `wp-site-performance-reviewer` |
-| `/wp-copy-review` | Check French copy. | `wp-site-copy-reviewer` |
-| `/wp-github` | Change workflows, templates or community files in .github/. | `wp-site-github-maintainer` |
-| `/wp-quality` | Run the local quality gate, stopping at the first failure. | runs the commands itself |
+| `/cw-page` | Add or change a page. | `cw-site-page-builder` |
+| `/cw-section` | Build a home section. | `cw-site-section-builder` |
+| `/cw-form` | Build the newsletter or contact form. | `cw-site-form-builder` |
+| `/cw-test` | Write tests. | `cw-site-test-writer` |
+| `/cw-seo-review` | Review SEO readiness. | `cw-site-seo-reviewer` |
+| `/cw-a11y` | Audit accessibility. | `cw-site-a11y-auditor` |
+| `/cw-design-review` | Compare with the mockup. | `cw-site-design-reviewer` |
+| `/cw-perf-review` | Review page weight. | `cw-site-performance-reviewer` |
+| `/cw-copy-review` | Check French copy. | `cw-site-copy-reviewer` |
+| `/cw-github` | Change workflows, templates or community files in .github/. | `cw-site-github-maintainer` |
+| `/cw-quality` | Run the local quality gate, stopping at the first failure. | runs the commands itself |
 
 ## Rules
 
@@ -87,9 +87,9 @@ See [skills/](skills/) for the complete inventory, including the technology guid
 
 | Skill | Use |
 | --- | --- |
-| `wp-context` | What Waypoint is, where the mockup, the integration guide and the repository map live, the product vocabulary (spaces, lists, sprints, tasks, statuses, milestones) and the multi-repository ownership rules. |
-| `wp-website-sections` | The sections of the Vitrine artboard in order, with their behaviors and the pricing rules. |
-| `wp-seo-basics` | The metadata and structure every prerendered page of the website needs. |
+| `cw-context` | What Cadenway is, where the mockup, the integration guide and the repository map live, the product vocabulary (spaces, lists, sprints, tasks, statuses, milestones) and the multi-repository ownership rules. |
+| `cw-website-sections` | The sections of the Vitrine artboard in order, with their behaviors and the pricing rules. |
+| `cw-seo-basics` | The metadata and structure every prerendered page of the website needs. |
 
 ## Hooks
 

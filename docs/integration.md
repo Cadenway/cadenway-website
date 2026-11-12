@@ -10,7 +10,7 @@ The public site is intended to prerender its routes and link visitors to the web
 
 ## Seo Basics
 
-Source: `wp-seo-basics` ([Claude](../.claude/skills/wp-seo-basics/SKILL.md), [Codex](../.codex/skills/wp-seo-basics/SKILL.md)).
+Source: `cw-seo-basics` ([Claude](../.claude/skills/cw-seo-basics/SKILL.md), [Codex](../.codex/skills/cw-seo-basics/SKILL.md)).
 
 - `<title>` and `<meta name="description">` unique per page; canonical link; Open Graph title,
   description and image.
@@ -19,7 +19,7 @@ Source: `wp-seo-basics` ([Claude](../.claude/skills/wp-seo-basics/SKILL.md), [Co
 
 ## Website Sections
 
-Source: `wp-website-sections` ([Claude](../.claude/skills/wp-website-sections/SKILL.md), [Codex](../.codex/skills/wp-website-sections/SKILL.md)).
+Source: `cw-website-sections` ([Claude](../.claude/skills/cw-website-sections/SKILL.md), [Codex](../.codex/skills/cw-website-sections/SKILL.md)).
 
 | #   | Section      | Behavior                                                                                                                                                              |
 | --- | ------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |

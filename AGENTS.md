@@ -1,4 +1,4 @@
-# waypoint-website: agent instructions
+# cadenway-website: agent instructions
 
 These instructions are mandatory for every AI assistant working in this repository, whatever the
 vendor. [CLAUDE.md](CLAUDE.md) imports them for Claude Code. Explicit user instructions take
@@ -10,7 +10,7 @@ and [Codex](.codex/README.md) for agents, skills, commands and hooks.
 ## First read
 
 - `docs/maquette/source/Vitrine.dc.html` and `Legal.dc.html` (or the live mockup).
-- The [repositories document](https://claude.ai/artifact/BPinmYxoF3mbK8w9BMB43N), section "waypoint-website".
+- The [repositories document](https://claude.ai/artifact/BPinmYxoF3mbK8w9BMB43N), section "cadenway-website".
 - `package.json` for versions and scripts once the repository is bootstrapped. Do not restate
   versions elsewhere: a copy goes stale.
 
@@ -18,7 +18,7 @@ and [Codex](.codex/README.md) for agents, skills, commands and hooks.
 
 The structure and workflows below describe the bootstrap target. Check the checkout for available files and commands.
 
-waypoint-website is the public site: the Vitrine artboard (marketing, pricing, FAQ) and the Legal pages (privacy, terms, help with a contact form). Angular 22 with static prerendering of every route, served as a Docker image of static files behind Traefik on `www.<domain>`. Created after the first version of the app.
+cadenway-website is the public site: the Vitrine artboard (marketing, pricing, FAQ) and the Legal pages (privacy, terms, help with a contact form). Angular 22 with static prerendering of every route, served as a Docker image of static files behind Traefik on `www.<domain>`. Created after the first version of the app.
 
 Open inconsistency to settle before shipping pricing: the free plan reads "10 membres, 5 Go" here and "5 membres, 2 Go" in the app.
 
@@ -48,7 +48,7 @@ Open inconsistency to settle before shipping pricing: the free plan reads "10 me
 
 ## GitHub files (`.github/`)
 
-This repository carries everything GitHub reads from it; Waypoint has no organization `.github`
+This repository carries everything GitHub reads from it; Cadenway has no organization `.github`
 repository and nothing is inherited.
 
 - [`.github/README.md`](.github/README.md) is the repository home page; `CONTRIBUTING.md`,
@@ -60,19 +60,18 @@ repository and nothing is inherited.
 - The parts shared with the other repositories are duplicated on purpose; a change to them is repeated
   in each repository through its own pull request.
 
-
 ## Commands and quality gates
 
 The scripts below are this repository's contract. While the repository is being bootstrapped,
 create them with these exact names; afterwards, use them and never an ad-hoc equivalent. Run the
 narrowest check that covers the change first, then widen:
 
-| Changed | Minimum check |
-| --- | --- |
-| Pages, sections | `pnpm test`, `pnpm build` |
-| SEO or metadata | `pnpm build` and `wp-site-seo-reviewer` |
-| Forms | `pnpm test -- <form>` |
-| Docs or agent instructions only | Scoped formatting and link review |
+| Changed                         | Minimum check                           |
+| ------------------------------- | --------------------------------------- |
+| Pages, sections                 | `pnpm test`, `pnpm build`               |
+| SEO or metadata                 | `pnpm build` and `cw-site-seo-reviewer` |
+| Forms                           | `pnpm test --include <form>`            |
+| Docs or agent instructions only | Scoped formatting and link review       |
 
 Report the commands you actually ran and their results; a check you did not run is reported as not
 run.
@@ -81,11 +80,11 @@ run.
 
 - Trunk-based: work branches come from `main`, named `<type>/<lowercase-kebab-description>` with a
   type among `feat`, `fix`, `docs`, `style`, `refactor`, `perf`, `test`, `build`, `ci`, `chore`,
-  `revert`; put the Waypoint task id first when there is one (`feat/way-482-sso-screen`). Never an
+  `revert`; put the Cadenway task id first when there is one (`feat/cad-482-sso-screen`). Never an
   agent name as a prefix. Validate with `git check-ref-format --branch <name>`.
 - Commits and PR titles follow Conventional Commits: `type(scope): subject`, English, imperative,
   lowercase subject, no trailing period, at most 100 characters; `!` only for a breaking change.
-- Pull requests target `main` and are squash-merged after review and green CI. release-please opens the release pull request; its merge tags, publishes the image and lets the deploy workflow write the version into waypoint-ops.
+- Pull requests target `main` and are squash-merged after review and green CI. release-please opens the release pull request; its merge tags, publishes the image and lets the deploy workflow write the version into cadenway-ops.
 - Stage only the files of your task; preserve other people's changes in the working tree.
 
 ## Hard limits (never without the user's explicit request in this conversation)
@@ -94,12 +93,11 @@ run.
 - Never run a registry publish (`npm publish`, `pnpm publish`): this repository ships as a Docker image built by CI.
 - Never force-push, and never amend or rebase commits that are already pushed.
 - Never bypass the Git hooks (`--no-verify`, `core.hooksPath` overrides, `ALLOW_MAIN_PUSH=1`,
-  `WP_SKIP_PUSH_CHECKS=1`).
+  `CW_SKIP_PUSH_CHECKS=1`).
 - Never write a token, password or private key anywhere; `.npmrc` keeps `${NODE_AUTH_TOKEN}`. Do
   not read or write secret environment files; new variables are documented in `.env.example`.
 - Never edit generated trees (`dist/`, `node_modules/`, `coverage/`) or lockfiles by hand.
-- Never modify a sibling checkout (`../waypoint-*`) from a task in this repository.
-
+- Never modify a sibling checkout (`../cadenway-*`) from a task in this repository.
 
 The agent hooks enforce most of these mechanically; a refused command is a signal to stop and ask,
 not to find another way around it.
@@ -107,11 +105,11 @@ not to find another way around it.
 ## Agent tooling
 
 - **Claude Code**: [CLAUDE.md](CLAUDE.md) and [.claude/README.md](.claude/README.md): the
-  `wp-site-*` agents, the `/wp-*` commands (`/wp-quality` runs the whole local gate),
+  `cw-site-*` agents, the `/cw-*` commands (`/cw-quality` runs the whole local gate),
   path-scoped rules and hooks.
-- **Codex**: [.codex/README.md](.codex/README.md) covers the specialists, `$wp-*` skills, rules and hooks.
-- **Builders** (assigned writes): `wp-site-page-builder`, `wp-site-section-builder`, `wp-site-form-builder`, `wp-site-test-writer`, `wp-site-github-maintainer`.
-- **Reviewers** (read-only): `wp-site-seo-reviewer`, `wp-site-a11y-auditor`, `wp-site-design-reviewer`, `wp-site-performance-reviewer`, `wp-site-copy-reviewer`.
+- **Codex**: [.codex/README.md](.codex/README.md) covers the specialists, `$cw-*` skills, rules and hooks.
+- **Builders** (assigned writes): `cw-site-page-builder`, `cw-site-section-builder`, `cw-site-form-builder`, `cw-site-test-writer`, `cw-site-github-maintainer`.
+- **Reviewers** (read-only): `cw-site-seo-reviewer`, `cw-site-a11y-auditor`, `cw-site-design-reviewer`, `cw-site-performance-reviewer`, `cw-site-copy-reviewer`.
 - Specialists are available, not mandatory. Delegate a bounded responsibility with explicit files and
   checks, assign disjoint files to parallel agents and integrate their results yourself.
 

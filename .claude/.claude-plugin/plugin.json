@@ -1,7 +1,7 @@
 {
-  "name": "waypoint-website",
+  "name": "cadenway-website",
   "version": "0.1.0",
-  "description": "waypoint-website tooling: 10 wp-site-* agents (page, section, form and test builders plus read-only SEO, accessibility, design, performance and copy reviewers for the prerendered public site, plus a .github maintainer), 11 /wp-* commands, 7 path-scoped rules, 10 skills, and the guard, git-guard and format hooks. The plugin root is this .claude/ folder; the hooks only act inside a waypoint-website checkout.",
+  "description": "cadenway-website tooling: 10 cw-site-* agents (page, section, form and test builders plus read-only SEO, accessibility, design, performance and copy reviewers for the prerendered public site, plus a .github maintainer), 11 /cw-* commands, 7 path-scoped rules, 10 skills, and the guard, git-guard and format hooks. The plugin root is this .claude/ folder; the hooks only act inside a cadenway-website checkout.",
   "author": {
     "name": "Valentin FORTIN"
   }
