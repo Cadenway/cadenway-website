@@ -46,7 +46,7 @@ narrowest check that covers the change first, then widen:
 | ------------------------------- | --------------------------------------- |
 | Pages, sections                 | `pnpm test`, `pnpm build`               |
 | SEO or metadata                 | `pnpm build` and `wp-site-seo-reviewer` |
-| Forms                           | `pnpm test -- <form>`                   |
+| Forms                           | `pnpm test --include <form>`            |
 | Docs or agent instructions only | Scoped formatting and link review       |
 
 Report the commands you actually ran and their results; a check you did not run is reported as not

@@ -22,7 +22,7 @@ Fixes: WAY-
 - [ ] `pnpm typecheck`
 - [ ] `pnpm test`
 - [ ] `pnpm build`
-- [ ] `pnpm e2e -- <spec>`
+- [ ] `pnpm e2e <spec>`
 
 ## Contracts
 

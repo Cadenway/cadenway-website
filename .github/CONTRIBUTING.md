@@ -76,7 +76,7 @@ pnpm lint
 pnpm typecheck
 pnpm test
 pnpm build                 # prerenders every route
-pnpm e2e -- <spec>
+pnpm e2e <spec>
 ```
 
 The checks run in CI on every pull request; report in the pull request the ones you ran locally.

@@ -45,7 +45,7 @@ Read the request, then re-read it against what you are about to do. Everything b
 
 ## Checks
 
-- `pnpm test -- src/app/forms`
+- `pnpm test --include src/app/forms`
 
 ## Report
 
