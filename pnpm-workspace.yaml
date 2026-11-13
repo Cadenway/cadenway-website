@@ -5,6 +5,9 @@ packages:
 # Renovate applies too), and a package whose trust evidence (provenance, trusted publisher) is weaker
 # than in an earlier version is refused.
 minimumReleaseAge: 2880
+# Cadenway packages are exempt: they are taken as soon as they are published, as Renovate does.
+minimumReleaseAgeExclude:
+  - '@cadenway/*'
 trustPolicy: no-downgrade
 
 allowBuilds:
