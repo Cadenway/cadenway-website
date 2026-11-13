@@ -8,7 +8,11 @@ WORKDIR /app
 # Corepack installs the pnpm version named by `packageManager` in package.json.
 RUN corepack enable
 COPY package.json pnpm-lock.yaml pnpm-workspace.yaml .npmrc ./
+# The @cadenway/* packages are private, and pnpm ignores a token written in the project .npmrc.
+# The install steps therefore mount a user-level npmrc as a build secret: it exists for that step
+# only and reaches no layer. Build with `docker build --secret id=npmrc,env=NPMRC .`.
 RUN --mount=type=cache,id=pnpm-store,target=/pnpm/store \
+    --mount=type=secret,id=npmrc,target=/root/.npmrc,required=true \
     pnpm install --frozen-lockfile --ignore-scripts --store-dir /pnpm/store
 COPY angular.json tsconfig.json tsconfig.app.json .postcssrc.json ./
 COPY public ./public
