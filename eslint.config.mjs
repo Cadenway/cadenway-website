@@ -15,6 +15,13 @@ const noSiblingSources = {
   message: 'Never import sibling sources: use the published @cadenway/* packages.',
 };
 
+// Packages the dependency review rejected, with what replaces each one. A sub-path import is
+// refused too.
+const rejectedPackages = [
+  ['axios', 'The API is reached through @cadenway/api-client only.'],
+  ['date-fns', 'It does not separate a plain date from an instant: dates use Temporal.'],
+].map(([name, message]) => ({ regex: `^${name}(/|$)`, message }));
+
 export default defineConfig(
   globalIgnores([
     'dist/',
@@ -61,7 +68,7 @@ export default defineConfig(
       '@typescript-eslint/no-extraneous-class': ['error', { allowWithDecorator: true }],
       'no-restricted-imports': [
         'error',
-        { paths: [signalFormsOnly], patterns: [noSiblingSources] },
+        { paths: [signalFormsOnly], patterns: [noSiblingSources, ...rejectedPackages] },
       ],
       'no-restricted-syntax': [
         'error',

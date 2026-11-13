@@ -1,6 +1,12 @@
 packages:
   - '.'
 
+# Supply chain: a version becomes installable two days after its release (2880 minutes, the delay
+# Renovate applies too), and a package whose trust evidence (provenance, trusted publisher) is weaker
+# than in an earlier version is refused.
+minimumReleaseAge: 2880
+trustPolicy: no-downgrade
+
 allowBuilds:
   '@parcel/watcher': false
   esbuild: false
