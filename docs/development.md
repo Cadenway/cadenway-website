@@ -61,6 +61,7 @@ The following commands match the planned local gate. Run `/cw-quality` in Claude
 pnpm format:check
 pnpm lint
 pnpm typecheck
+pnpm test:architecture
 pnpm test
 pnpm build                 # prerenders every route
 ```
