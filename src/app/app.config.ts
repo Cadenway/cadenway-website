@@ -4,7 +4,14 @@ import { provideRouter } from '@angular/router';
 
 import { APP_ROUTES } from './app.routes';
 
-/** Root providers of the site, shared by the browser and by the prerendering build. */
+/**
+ * Constant appConfig
+ *
+ * @description
+ * Root providers shared by the browser and the prerendering build.
+ *
+ * @type {ApplicationConfig}
+ */
 export const appConfig: ApplicationConfig = {
   providers: [
     provideBrowserGlobalErrorListeners(),

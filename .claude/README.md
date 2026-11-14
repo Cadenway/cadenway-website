@@ -73,8 +73,8 @@ check that writes files. No agent delegates further.
 
 | File | Subject | Loads for |
 | --- | --- | --- |
-| `pages.md` | Pages | `src/app/pages/**`, `src/app/app.routes.ts` |
-| `sections.md` | Home sections | `src/app/sections/**` |
+| `pages.md` | Pages | `src/app/features/*/ui/pages/**`, `src/app/app.routes.ts` |
+| `sections.md` | Home sections | `src/app/features/home/ui/components/**` |
 | `components.md` | Angular components | `src/app/**/*.ts`, `src/app/**/*.html` |
 | `language.md` | Language | always |
 | `git-and-commits.md` | Git and commits | always |

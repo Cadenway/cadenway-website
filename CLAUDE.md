@@ -34,6 +34,7 @@ checks during bootstrap.
 
 ```bash
 pnpm format:check
+pnpm test:lint
 pnpm lint
 pnpm typecheck
 pnpm test:architecture
