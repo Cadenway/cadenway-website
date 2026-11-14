@@ -35,9 +35,14 @@ Open inconsistency to settle before shipping pricing: the free plan reads "10 me
 
 ## Architectural ownership
 
-- `src/app/pages/`: one folder per route (home, privacy, terms, help).
-- `src/app/sections/`: the home sections.
-- `src/app/forms/`: newsletter and contact.
+- `src/app/features/home/`: the public home page, its sections and newsletter form.
+- `src/app/features/legal/`: privacy, terms, help and the contact form.
+- `src/app/core/`: application-wide infrastructure. `layouts/` composes shells and `shared/`
+  contains generic non-visual primitives. Create folders when they have an implementation.
+- Features own their routes, presentation, data access and documented public entries. `core` never
+  imports a feature or layout; cross-feature imports use the owner's documented public entries.
+- Use `@app`, `@core`, `@features`, `@layouts`, `@shared` and `@env` across boundaries. Place specs
+  and their local fixtures beside the subject, without `testing/` directories.
 
 ## Boundaries (hard rules)
 

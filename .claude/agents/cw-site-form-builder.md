@@ -24,7 +24,7 @@ inspection from executed checks.
 
 ## Role scope
 
-`src/app/forms/`.
+`src/app/features/*/ui/forms/`.
 
 ## The request is the deliverable
 
@@ -45,7 +45,7 @@ Read the request, then re-read it against what you are about to do. Everything b
 
 ## Checks
 
-- `pnpm test --include src/app/forms`
+- `pnpm test --include src/app/features/*/ui/forms`
 
 ## Report
 

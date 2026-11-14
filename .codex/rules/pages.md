@@ -1,6 +1,6 @@
 ---
 paths:
-  - 'src/app/pages/**'
+  - 'src/app/features/*/ui/pages/**'
   - 'src/app/app.routes.ts'
 ---
 

@@ -6,7 +6,7 @@
 .codex
 .angular
 docs
-e2e
+tests
 node_modules
 dist
 coverage

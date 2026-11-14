@@ -2,13 +2,13 @@ import { type ApplicationConfig, provideBrowserGlobalErrorListeners } from '@ang
 import { provideClientHydration } from '@angular/platform-browser';
 import { provideRouter } from '@angular/router';
 
-import { routes } from './app.routes';
+import { APP_ROUTES } from './app.routes';
 
 /** Root providers of the site, shared by the browser and by the prerendering build. */
 export const appConfig: ApplicationConfig = {
   providers: [
     provideBrowserGlobalErrorListeners(),
-    provideRouter(routes),
+    provideRouter(APP_ROUTES),
     // The browser takes over the prerendered HTML instead of rendering the page again.
     provideClientHydration(),
   ],
