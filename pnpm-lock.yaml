@@ -162,6 +162,9 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+overrides:
+  '@oxc-parser/binding-wasm32-wasi@0.156.0>@napi-rs/wasm-runtime': 1.2.5
+
 importers:
 
   .:
@@ -1344,12 +1347,12 @@ packages:
     resolution: {integrity: sha512-xJIPs+bYuc9ASBl+cvGsKbGrJmS6fAKaSZCnT0lhahT5rhA2VVy9/EcIgd2JhtEuFOJNx7UHNn/qiTPTY4nrQw==}
     engines: {node: '>= 10'}
 
-  '@napi-rs/wasm-runtime@1.2.7':
-    resolution: {integrity: sha512-zJccwplOAbgfZju95IUHazLnx9RAPtPN2YGJXI6UbrgeaR9QfPjGrQL6ERkSAtnVCA4Q+83ApGyaX5zdpCaKkQ==}
+  '@napi-rs/wasm-runtime@1.2.5':
+    resolution: {integrity: sha512-HshSvXzmBxNzqejd3k/KemgQ3hdREUYFRRrgxOZ+gPljDIsO2SDZrVZMd4Z/HsxudQbE62OVyVFE8z9BCurfjA==}
     engines: {node: ^20.19.0 || ^22.13.0 || >=23.5.0}
     peerDependencies:
-      '@emnapi/core': ^1.7.1 || 2.0.0-beta.2 || 2.0.0-beta.3
-      '@emnapi/runtime': ^1.7.1 || 2.0.0-beta.2 || 2.0.0-beta.3
+      '@emnapi/core': ^1.7.1 || ^2.0.0-alpha.4
+      '@emnapi/runtime': ^1.7.1 || ^2.0.0-alpha.4
 
   '@ng-icons/core@36.1.0':
     resolution: {integrity: sha512-2o6M/K29lPN3wGq/nOxqVjzDV25HHIh6PXm2/ISwKa0eFbbDYwYkg7g9msjPS40OmQpqBgSVLIwinEifEOQNjg==}
@@ -4559,7 +4562,7 @@ snapshots:
       '@napi-rs/nice-win32-x64-msvc': 1.1.1
     optional: true
 
-  '@napi-rs/wasm-runtime@1.2.7(@emnapi/core@2.0.0-alpha.6)(@emnapi/runtime@2.0.0-alpha.6)':
+  '@napi-rs/wasm-runtime@1.2.5(@emnapi/core@2.0.0-alpha.6)(@emnapi/runtime@2.0.0-alpha.6)':
     dependencies:
       '@emnapi/core': 2.0.0-alpha.6
       '@emnapi/runtime': 2.0.0-alpha.6
@@ -4642,7 +4645,7 @@ snapshots:
     dependencies:
       '@emnapi/core': 2.0.0-alpha.6
       '@emnapi/runtime': 2.0.0-alpha.6
-      '@napi-rs/wasm-runtime': 1.2.7(@emnapi/core@2.0.0-alpha.6)(@emnapi/runtime@2.0.0-alpha.6)
+      '@napi-rs/wasm-runtime': 1.2.5(@emnapi/core@2.0.0-alpha.6)(@emnapi/runtime@2.0.0-alpha.6)
     optional: true
 
   '@oxc-parser/binding-win32-arm64-msvc@0.156.0':
