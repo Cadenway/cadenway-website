@@ -1,6 +1,6 @@
 ---
 paths:
-  - 'src/app/sections/**'
+  - 'src/app/features/home/ui/components/**'
 ---
 
 # Home sections

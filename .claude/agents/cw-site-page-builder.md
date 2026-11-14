@@ -24,7 +24,7 @@ inspection from executed checks.
 
 ## Role scope
 
-`src/app/pages/` and the routes.
+`src/app/features/*/ui/pages/` and the routes.
 
 ## The request is the deliverable
 

@@ -16,10 +16,11 @@
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "lint": "eslint .",
-    "typecheck": "ngc -p tsconfig.app.json --noEmit && ngc -p tsconfig.spec.json --noEmit && tsc -p e2e/tsconfig.json --noEmit",
+    "test:architecture": "node --test tests/architecture/project.test.mjs",
+    "typecheck": "ngc -p tsconfig.app.json --noEmit && ngc -p tsconfig.spec.json --noEmit && tsc -p tests/e2e/tsconfig.json --noEmit",
     "test": "ng test --no-watch",
-    "e2e": "playwright test",
-    "quality": "pnpm format:check && pnpm lint && pnpm typecheck && pnpm test && pnpm build"
+    "e2e": "playwright test --config=tests/e2e/playwright.config.ts",
+    "quality": "pnpm format:check && pnpm lint && pnpm typecheck && pnpm test:architecture && pnpm test && pnpm build"
   },
   "dependencies": {
     "@angular/aria": "^22.2.6",
@@ -44,6 +45,7 @@
     "@angular/build": "^22.2.6",
     "@angular/cli": "^22.2.6",
     "@angular/compiler-cli": "^22.2.5",
+    "@cadenway/angular-testing": "0.1.0",
     "@commitlint/cli": "^21.2.4",
     "@commitlint/config-conventional": "^21.2.4",
     "@eslint/js": "^10.0.1",

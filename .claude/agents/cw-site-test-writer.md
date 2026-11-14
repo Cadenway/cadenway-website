@@ -24,7 +24,7 @@ inspection from executed checks.
 
 ## Role scope
 
-Specs and `e2e/`.
+Specs and `tests/e2e/`.
 
 ## The request is the deliverable
 
