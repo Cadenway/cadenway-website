@@ -35,9 +35,9 @@
     "@angular/router": "^22.2.5",
     "@angular/ssr": "^22.2.6",
     "@cadenway/api-client": "^0.1.0",
-    "@cadenway/icons": "^0.2.0",
-    "@cadenway/tokens": "^0.1.1",
-    "@cadenway/ui": "^0.2.0",
+    "@cadenway/icons": "^0.3.0",
+    "@cadenway/tokens": "^0.2.0",
+    "@cadenway/ui": "^0.3.0",
     "@ng-icons/core": "^36.1.0",
     "rxjs": "~7.8.2",
     "tslib": "^2.9.1"
