@@ -24,7 +24,7 @@ inspection from executed checks.
 
 ## Role scope
 
-`src/app/sections/`.
+`src/app/features/home/ui/components/`.
 
 ## The request is the deliverable
 
@@ -55,7 +55,7 @@ Load them with the `Skill` tool when their subject comes up (if the tool is unav
 
 ## Checks
 
-- `pnpm test --include src/app/sections`
+- `pnpm test --include src/app/features/home/ui/components`
 - `pnpm build`
 
 ## Report

@@ -5,7 +5,7 @@ const localUrl = 'http://localhost:4300';
 const externalUrl = process.env['E2E_BASE_URL'];
 
 export default defineConfig({
-  testDir: './e2e',
+  testDir: '.',
   forbidOnly: process.env['CI'] !== undefined,
   reporter: [['list'], ['html', { open: 'never' }]],
   use: {

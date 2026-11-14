@@ -4,9 +4,8 @@
 
 ## Status
 
-At the time this documentation was written, this checkout has no `package.json`, application source tree, or GitHub workflow files. The target architecture, scripts, and workflows in this guide must be created and verified during bootstrap.
-
-The following architecture is the target recorded in [AGENTS.md](../AGENTS.md). Paths and integrations are design boundaries, not evidence that files or services already exist.
+The checkout contains the Angular bootstrap, static prerender configuration and smoke tests. The
+feature ownership described below is the target; the pages and forms have not been implemented yet.
 
 ## Purpose and target structure
 
@@ -16,9 +15,20 @@ Open inconsistency to settle before shipping pricing: the free plan reads "10 me
 
 ## Architectural ownership
 
-- `src/app/pages/`: one folder per route (home, privacy, terms, help).
-- `src/app/sections/`: the home sections.
-- `src/app/forms/`: newsletter and contact.
+The [Angular architecture checker](https://github.com/Cadenway/cadenway-tooling/tree/main/packages/angular-testing) verifies authored source, file names and import boundaries. Once the package is published, add `@cadenway/angular-testing` as a development dependency and commit the updated lockfile. Run `pnpm install --frozen-lockfile` and `pnpm test:architecture`, then add the latter to `pnpm quality` and the blocking CI job. Use the application profile with the application TypeScript config.
+
+- `src/app/features/home/`: home page, sections and newsletter form.
+- `src/app/features/legal/`: privacy, terms, help and contact form.
+- `src/app/core/`: application-wide infrastructure; `layouts/`: shell composition;
+  `shared/`: generic non-visual primitives. Create folders only when needed.
+- Features own their routes, UI, data access and public entries documented in `FEATURE.md`.
+  A feature's `ui/` contains its pages, forms and compositions; `data-access/services/` calls
+  the generated API client and `data-access/adapters/` maps its DTOs.
+- `core` does not import features or layouts. Cross-feature dependencies use the owning feature's
+  documented public entry; layouts consume public widgets and ports rather than concrete stores.
+- Use the `@app`, `@core`, `@features`, `@layouts`, `@shared` and `@env` aliases across boundaries.
+  Place unit tests and local test helpers beside their subject without a `testing/` directory;
+  browser scenarios live in `tests/e2e/`.
 
 ## Boundaries
 

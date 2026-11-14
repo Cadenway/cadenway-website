@@ -1,4 +1,11 @@
 import type { Routes } from '@angular/router';
 
-/** Route table of the site: one entry per page of `src/app/pages/`, each one prerendered. */
-export const routes: Routes = [];
+/**
+ * Constant APP_ROUTES
+ *
+ * @description
+ * Route table of the site; each page is prerendered.
+ *
+ * @type {Routes}
+ */
+export const APP_ROUTES: Routes = [];
