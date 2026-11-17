@@ -2,20 +2,19 @@
 
 [Documentation index](README.md) · [Repository overview](../.github/README.md) · [Repository instructions](../AGENTS.md)
 
-## Bootstrap status
+## Status
 
-At the time this documentation was written, this checkout has no `package.json`, application source tree, or GitHub workflow files. The target architecture, scripts, and workflows in this guide must be created and verified during bootstrap.
-
-The commands below are the documented **target workflow**, copied from the repository overview and instructions. They are not proof that scripts, infrastructure, CI, or dependencies currently exist. Inspect the repository's actual manifests and files before running them, and report unavailable checks rather than inventing replacements. Run Git, pnpm, build, and test commands with this repository as the working directory, never from the parent workspace.
+The checkout contains the [package scripts](../package.json), the Angular application, and the
+[CI workflow](../.github/workflows/ci.yml). Run Git, pnpm, build and test commands with this
+repository as the working directory.
 
 ## Before making a change
 
 - `docs/maquette/source/Vitrine.dc.html` and `Legal.dc.html` (or the live mockup).
 - The [repositories document](https://claude.ai/artifact/BPinmYxoF3mbK8w9BMB43N), section "cadenway-website".
-- `package.json` for versions and scripts once the repository is bootstrapped. Do not restate
-  versions elsewhere: a copy goes stale.
+- [package.json](../package.json) for versions and scripts.
 
-## Planned setup
+## Local setup
 
 Requirements: Node.js LTS and pnpm (versions in `package.json`), and Docker.
 
@@ -38,34 +37,20 @@ Requirements: Node.js LTS and pnpm (versions in `package.json`), and Docker.
 
 ## Minimum checks by change
 
-The scripts below are this repository's contract. While the repository is being bootstrapped,
-create them with these exact names; afterwards, use them and never an ad-hoc equivalent. Run the
-narrowest check that covers the change first, then widen:
+Start with the [checks by change](../AGENTS.md#commands-and-quality-gates).
 
-| Changed                         | Minimum check                           |
-| ------------------------------- | --------------------------------------- |
-| Pages, sections                 | `pnpm test`, `pnpm build`               |
-| SEO or metadata                 | `pnpm build` and `cw-site-seo-reviewer` |
-| Forms                           | `pnpm test --include <form>`            |
-| Docs or agent instructions only | Scoped formatting and link review       |
+## Full local quality gate
 
-Report the commands you actually ran and their results; a check you did not run is reported as not
-run.
+Use [`/cw-quality`](../.claude/commands/cw-quality.md) in Claude Code or
+[`$cw-quality`](../.codex/skills/cw-quality/SKILL.md) in Codex.
 
-## Planned full check list
+- With a spec glob, run only `pnpm test --include "<spec-glob>"`, passing the glob as one argument.
+  When no tests execute, report `0 tests executed` and mark the behavior as unverified.
+- Without a glob, run `pnpm quality` from this checkout. Its steps are declared in
+  [package.json](../package.json) and stop at the first failure.
+  The gate includes the architecture check, Angular unit tests and the prerendering build.
 
-The following commands match the planned local gate. Run `/cw-quality` in Claude Code or
-`$cw-quality` in Codex without arguments. Verify CI coverage once workflows exist.
-
-```bash
-pnpm format:check
-pnpm test:lint
-pnpm lint
-pnpm typecheck
-pnpm test:architecture
-pnpm test
-pnpm build                 # prerenders every route
-```
+Report the commands and their results, including checks that did not run or are unavailable.
 
 Run the browser checks separately once the stack is available. Pass the actual spec path to
 `pnpm e2e --` for a targeted run.

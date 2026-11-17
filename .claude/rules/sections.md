@@ -5,5 +5,5 @@ paths:
 
 # Home sections
 
-- Order and copy from `Vitrine.dc.html`; animations stop under reduced motion.
-- Pricing values come from one constant module; the calculator rounds as the mockup does.
+- Use `cw-website-sections` for order, `Vitrine.dc.html` for copy and stop animations under reduced motion.
+- Centralize pricing constants and match mockup rounding.
