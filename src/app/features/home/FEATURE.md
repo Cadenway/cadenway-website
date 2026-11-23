@@ -6,11 +6,13 @@ Own the public home page, its sections and newsletter form.
 
 ## Routes
 
-None yet.
+- `/` displays the public landing page and links to the webapp's sign-in and the public help page.
 
 ## Public entry points
 
-None yet.
+| Entry point   | Consumers |
+| ------------- | --------- |
+| `home.routes` | app       |
 
 ## Dependencies
 
