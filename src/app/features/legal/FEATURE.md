@@ -6,11 +6,14 @@ Own the privacy, terms and help pages, including the contact form.
 
 ## Routes
 
-None yet.
+- `/aide` publishes organization support guidance. Privacy and terms require approved text before
+  their public routes open.
 
 ## Public entry points
 
-None yet.
+| Entry point    | Consumers |
+| -------------- | --------- |
+| `legal.routes` | app       |
 
 ## Dependencies
 

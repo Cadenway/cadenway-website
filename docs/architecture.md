@@ -4,8 +4,8 @@
 
 ## Status
 
-The checkout contains the Angular bootstrap, static prerender configuration and smoke tests. The
-feature ownership described below is the target; the pages and forms have not been implemented yet.
+The Angular bootstrap prerenders the home and help routes. Privacy, terms and the public forms
+are still pending.
 
 ## Purpose and target structure
 

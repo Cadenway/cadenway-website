@@ -8,4 +8,14 @@ import type { Routes } from '@angular/router';
  *
  * @type {Routes}
  */
-export const APP_ROUTES: Routes = [];
+export const APP_ROUTES: Routes = [
+  {
+    path: '',
+    pathMatch: 'full',
+    loadChildren: () => import('@features/home/home.routes').then((entry) => entry.HOME_ROUTES),
+  },
+  {
+    path: 'aide',
+    loadChildren: () => import('@features/legal/legal.routes').then((entry) => entry.LEGAL_ROUTES),
+  },
+];
