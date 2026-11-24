@@ -9,7 +9,7 @@ trustPolicy: no-downgrade
 # Keep the Oxc WASI binding compatible with the emnapi alpha it pins.
 # Remove when Angular no longer ships this binding version.
 overrides:
-  '@oxc-parser/binding-wasm32-wasi@0.156.0>@napi-rs/wasm-runtime': 1.2.5
+  '@oxc-parser/binding-wasm32-wasi@0.158.0>@napi-rs/wasm-runtime': 1.2.5
 
 allowBuilds:
   '@parcel/watcher': false
